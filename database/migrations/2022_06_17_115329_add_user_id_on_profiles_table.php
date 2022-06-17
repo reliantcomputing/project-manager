@@ -16,8 +16,7 @@ class AddUserIdOnProfilesTable extends Migration
         Schema::table('profiles', function (Blueprint $table) {
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->nullOnDelete();
+                ->references('id')->on('users');
         });
     }
 
